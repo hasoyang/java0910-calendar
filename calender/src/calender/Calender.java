@@ -30,26 +30,19 @@ public class Calender {
 
 	public void setFirstDayOfTheWeak() 
 	{
-		for (int i = 0; i < 12; i++) 
+		if(leapYear)
 		{
-			if (leapYear) 
-			{
-				if (i < 2)
-					firstDayOfTheWeak[i] = ((21 * (year / 100) / 4) + (5 * (year % 100) / 4) + (26 * (i + 13 + 1) / 10)
-							- 1 - 1) % 7;
-				else
-					firstDayOfTheWeak[i] = ((21 * (year / 100) / 4) + (5 * (year % 100) / 4) + (26 * (i + 1 + 1) / 10)
-							+ 1 - 1) % 7;
-			}
-			else 
-			{
-				if (i < 2)
-					firstDayOfTheWeak[i] = ((21 * (year / 100) / 4) + (5 * (year % 100) / 4) + (26 * (i + 13 + 1) / 10)
-							- 1) % 7;
-				else
-					firstDayOfTheWeak[i] = ((21 * (year / 100) / 4) + (5 * (year % 100) / 4) + (26 * (i + 1 + 1) / 10)
-							+ 1 - 1) % 7;
-			}
+			firstDayOfTheWeak[0] = ((21 * (year / 100) / 4) + (5 * (year % 100) / 4) + (26 * ( 13 + 1) / 10)
+					- 1 - 1) % 7;
+		}
+		else
+		{
+			firstDayOfTheWeak[0] = ((21 * (year / 100) / 4) + (5 * (year % 100) / 4) + (26 * ( 13 + 1) / 10)
+					- 1 ) % 7;
+		}
+		for (int i = 1; i < 12; i++) 
+		{
+			firstDayOfTheWeak[i] =(firstDayOfTheWeak[i-1] + maxDate[i-1])%7 ;
 		}
 	}
 

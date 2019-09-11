@@ -20,11 +20,20 @@ public class IOController {
 	public static int inputYear()
 	{
 		Scanner sc = new Scanner(System.in);
-		int year;
+		int year = 0;
+		String input;
 		while(true)
 		{
 			System.out.print("년도를 입력하세요(0~9999) : ");
-			year = sc.nextInt();
+			input = sc.nextLine();
+			try {
+				year = Integer.parseInt(input);
+			}
+			catch(Exception e){
+				System.out.println("다시 입력해주세요");
+				continue;
+			}
+			//year = sc.nextInt();
 			
 			if(year<0 || year>9999)
 				System.out.println("다시 입력해주세요");
