@@ -1,4 +1,4 @@
-package calender;
+package calendar;
 import java.util.Scanner;
 public class IOController {
 	static 
@@ -79,9 +79,7 @@ public class IOController {
 	
 	public static void printCalender(int year)
 	{
-		Calender cal = new Calender(year);
-		
-		cal.setYear(year);
+		Calendar cal = new Calendar(year);
 		
 		int date[] = new int[12];
 		

@@ -1,22 +1,23 @@
-package calender;
+package calendar;
 
-public class Calender {
+public class Calendar {
 	private int maxDate[] ;
 	private int year;
 	int firstDayOfTheWeak[] ;
 	boolean leapYear;
 
-	public Calender(int year)
+	public Calendar(int year)
 	{
-		this.year = year;
+		setYear(year);
 		maxDate = new int[] { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
 		firstDayOfTheWeak = new int [12];
+		setFirstDayOfTheWeak();
 	}
 	public void setYear(int year) 
 	{
 		this.year = year;
 		setLeapYear();
-		setFirstDayOfTheWeak();
+		
 	}
 
 	public void setLeapYear() 
